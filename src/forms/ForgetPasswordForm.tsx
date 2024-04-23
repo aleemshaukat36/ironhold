@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import type { FormProps } from "antd";
-import { Button, Checkbox, Divider, Flex, Form, Input } from "antd";
+import { Button, Checkbox, Divider, Flex, Form, Input, Typography } from "antd";
 import Title from "antd/es/typography/Title";
 
 type FieldType = {
@@ -19,7 +19,7 @@ const onFinishFailed: FormProps<FieldType>["onFinishFailed"] = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 
-export default function LoginForm({ setPage }: any) {
+export default function ForgetPassForm() {
   return (
     <>
       <Title
@@ -30,8 +30,12 @@ export default function LoginForm({ setPage }: any) {
           borderBottom: "1px solid #58585b",
         }}
       >
-        Login
+        Retrieve Password
       </Title>
+      <Typography style={{ margin: '11px 0 5px', marginBottom:'10px' }}>
+        Please enter your username and client key.
+        Instructions on how to reset your password will be sent on email.
+      </Typography>
 
       <Form
         name="login-form"
@@ -49,14 +53,6 @@ export default function LoginForm({ setPage }: any) {
         </Form.Item>
 
         <Form.Item<FieldType>
-          name="password"
-          rules={[{ required: true, message: "Please input your password!" }]}
-          style={{ marginBottom: 11 }}
-        >
-          <Input.Password placeholder="password" />
-        </Form.Item>
-
-        <Form.Item<FieldType>
           name="account"
           rules={[{ required: true, message: "Please input your account!" }]}
           style={{ marginBottom: 11 }}
@@ -65,9 +61,6 @@ export default function LoginForm({ setPage }: any) {
         </Form.Item>
 
         <Flex justify="space-between">
-          <Form.Item<FieldType> name="remember" valuePropName="checked">
-            <Checkbox>Remember me</Checkbox>
-          </Form.Item>
 
           <Form.Item>
             <Button type="primary" htmlType="submit">
