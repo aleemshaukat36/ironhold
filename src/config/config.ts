@@ -1,1 +1,1 @@
-export const CLIENT_ID = 'DEMO';
+export const CLIENT_KEY = 'DEMO';

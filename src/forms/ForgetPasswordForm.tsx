@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import type { FormProps } from "antd";
-import { Button, Checkbox, Divider, Flex, Form, Input, Typography } from "antd";
+import { Button, Flex, Form, Input, Typography } from "antd";
 import Title from "antd/es/typography/Title";
-import { CLIENT_ID } from "@/config/config";
+import { CLIENT_KEY } from "@/config/config";
 
 type FieldType = {
   username?: string;
@@ -40,7 +40,7 @@ export default function ForgetPassForm() {
 
       <Form
         name="login-form"
-        initialValues={{ remember: true, account: CLIENT_ID }}
+        initialValues={{ remember: true, account: CLIENT_KEY }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
