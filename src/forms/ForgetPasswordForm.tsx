@@ -3,6 +3,7 @@ import React from "react";
 import type { FormProps } from "antd";
 import { Button, Checkbox, Divider, Flex, Form, Input, Typography } from "antd";
 import Title from "antd/es/typography/Title";
+import { CLIENT_ID } from "@/config/config";
 
 type FieldType = {
   username?: string;
@@ -32,14 +33,14 @@ export default function ForgetPassForm() {
       >
         Retrieve Password
       </Title>
-      <Typography style={{ margin: '11px 0 5px', marginBottom:'10px' }}>
-        Please enter your username and client key.
-        Instructions on how to reset your password will be sent on email.
+      <Typography style={{ margin: "11px 0 5px", marginBottom: "10px" }}>
+        Please enter your username and client key. Instructions on how to reset
+        your password will be sent on email.
       </Typography>
 
       <Form
         name="login-form"
-        initialValues={{ remember: true, account: "demo" }}
+        initialValues={{ remember: true, account: CLIENT_ID }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
@@ -60,10 +61,12 @@ export default function ForgetPassForm() {
           <Input disabled />
         </Form.Item>
 
-        <Flex justify="space-between">
-
+        <Flex
+          justify="space-between"
+          style={{ marginTop: 48, marginBottom: 60 }}
+        >
           <Form.Item>
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" style={{ width: 110 }}>
               Submit
             </Button>
           </Form.Item>
