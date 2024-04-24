@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="flip-card"
+  >
+    <div
+      class="flip-card-inner"
+    >
+      <div
+        class="flip-card-front"
+      />
+      <div
+        class="flip-card-back"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders homepage unchanged 2`] = `
+<div>
+  <div
+    class="flip-card"
+  >
+    <div
+      class="flip-card-inner"
+      style="transform: rotateY(180deg);"
+    >
+      <div
+        class="flip-card-front"
+      />
+      <div
+        class="flip-card-back"
+      />
+    </div>
+  </div>
+</div>
+`;
